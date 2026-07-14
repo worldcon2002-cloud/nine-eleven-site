@@ -73,12 +73,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   height: 76px;
 }
 .logo {
-  font-family: var(--font-en);
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.logo span { color: var(--neon-cyan); }
+.logo-mark { display: block; flex-shrink: 0; }
+.logo-text {
+  font-family: var(--font-kr);
+  font-weight: 900;
+  font-size: 17px;
+  letter-spacing: -0.3px;
+}
 
 .nav {
   display: flex;
@@ -217,7 +222,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   text-align: center;
 }
@@ -292,7 +297,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Services */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 .service-card {
@@ -307,7 +312,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(255,61,240,0.12);
 }
-.service-card.wide { grid-column: span 2; }
 .service-icon {
   width: 44px;
   height: 44px;
@@ -426,7 +430,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-wrap: wrap;
   gap: 12px;
 }
-.footer .logo { font-size: 16px; }
+.footer .logo-text { font-size: 15px; }
 .footer p { color: var(--text-dim); font-size: 13px; }
 
 /* Reveal animation */
@@ -446,15 +450,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .menu-toggle { display: flex; }
   .about-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .service-card.wide { grid-column: span 2; }
   .process-list { grid-template-columns: 1fr; }
   .contact-wrap { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .stats-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 520px) {
   .services-grid { grid-template-columns: 1fr; }
-  .service-card.wide { grid-column: span 1; }
   .form-row { flex-direction: column; }
   .hero-cta { flex-direction: column; align-items: center; }
 }
