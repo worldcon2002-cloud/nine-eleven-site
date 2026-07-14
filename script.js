@@ -55,10 +55,27 @@ function animateCount(el) {
   requestAnimationFrame(tick);
 }
 
-// Contact form (placeholder - no backend wired up yet)
+// Contact form - opens a pre-filled email to the agency inbox
 const form = document.getElementById('contactForm');
+const CONTACT_EMAIL = 'worldcon2002@gmail.com';
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  alert('상담 신청이 접수되었습니다. (실제 서비스에서는 이메일 연동 또는 서버 연결이 필요합니다)');
-  form.reset();
+  const data = new FormData(form);
+  const company = data.get('company');
+  const name = data.get('name');
+  const phone = data.get('phone');
+  const email = data.get('email');
+  const message = data.get('message');
+
+  const subject = `[상담신청] ${company} - ${name}`;
+  const body =
+    `회사명: ${company}\n` +
+    `담당자명: ${name}\n` +
+    `연락처: ${phone}\n` +
+    `이메일: ${email}\n\n` +
+    `문의 내용:\n${message}`;
+
+  window.location.href =
+    `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
