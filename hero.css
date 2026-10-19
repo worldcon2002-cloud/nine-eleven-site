@@ -1,0 +1,46 @@
+/* Static adaptation of Glyph Portal © 2026 Christian Katzmann. MIT. */
+.header{position:absolute;inset:0 0 auto;z-index:20;width:100%;background:var(--paper)}
+.portal-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.logo-portal{position:relative;isolation:isolate;background:var(--paper)}
+.portal-pin{position:relative;min-height:640px;height:100vh;height:100svh;overflow:clip}
+.portal-atmosphere{position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:var(--portal-caption,1);contain:paint}
+.portal-glow{position:absolute;width:90vmax;height:70vmax;border-radius:50%;background:radial-gradient(ellipse,rgba(177,218,43,.16),rgba(131,170,37,.05) 36%,transparent 66%);will-change:transform}
+.portal-glow-one{left:-40%;top:-65%;animation:portal-drift-one 18s ease-in-out infinite alternate}
+.portal-glow-two{right:-45%;bottom:-75%;background:radial-gradient(ellipse,rgba(210,245,66,.19),rgba(107,142,34,.04) 40%,transparent 66%);animation:portal-drift-two 23s ease-in-out infinite alternate}
+.portal-dotfield{position:absolute;inset:-48px;background-image:radial-gradient(circle,rgba(210,245,66,.23) .8px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(transparent 5%,#000 25%,transparent 47%,#000 82%,transparent);animation:portal-grid-drift 16s linear infinite}
+.portal-orbits{position:absolute;inset:0;width:100%;height:100%;opacity:.65;mask-image:radial-gradient(ellipse at 50% 46%,transparent 25%,#000 65%)}
+.portal-orbit-track{stroke-width:.6;opacity:.12}
+.portal-orbit-runner{stroke-width:1.3;stroke-linecap:round;stroke-dasharray:5 95;animation:portal-orbit-flow 16s linear infinite;opacity:.7}
+.portal-orbit-runner-two{stroke-dasharray:2 98;animation-duration:24s;animation-direction:reverse;opacity:.45}
+.portal-motion-toggle{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 8px 0 0;border:0;color:var(--muted);background:transparent;font:inherit;letter-spacing:1px;cursor:pointer}
+.portal-motion-toggle span{color:var(--accent)}
+.logo-portal[data-background-paused="true"] .portal-atmosphere *{animation-play-state:paused!important}
+@keyframes portal-drift-one{from{transform:translate(-6%,0) scale(.95)}to{transform:translate(32%,30%) scale(1.15)}}
+@keyframes portal-drift-two{from{transform:translate(5%,10%) scale(1)}to{transform:translate(-30%,-28%) scale(1.15)}}
+@keyframes portal-grid-drift{to{transform:translate(32px,-32px)}}
+@keyframes portal-orbit-flow{to{stroke-dashoffset:-100}}
+.portal-art{position:absolute;left:0;top:32%;width:100%;height:27%;display:block;pointer-events:none}
+.portal-art text{font-family:"Century Gothic","Avenir Next",Arial,sans-serif;font-weight:400;letter-spacing:-6px}
+.portal-front{position:absolute;inset:0;opacity:var(--portal-caption,1)}
+.portal-eyebrow{position:absolute;top:calc(46% - var(--portal-half,13vh) - 56px);left:5%;right:5%;margin:0;text-align:center;color:var(--muted);font-size:14px;letter-spacing:.02em}
+.portal-support{position:absolute;top:calc(46% + var(--portal-half,13vh) + 30px);left:5%;right:5%;text-align:center}
+.portal-support p{margin:0 0 25px;font-size:17px;color:var(--muted)}
+.portal-enter{display:inline-flex;align-items:center;justify-content:center;gap:32px;min-height:48px;padding:12px 22px;border:1px solid var(--line);border-radius:8px;font-size:14px;background:var(--accent);color:var(--paper);transition:background .2s}
+.portal-enter:hover{background:#e0ff70}.portal-enter span{font-size:22px}
+.portal-bottom{position:absolute;bottom:5%;left:5%;right:5%;display:flex;justify-content:space-between;align-items:center;font:11px Arial,sans-serif;letter-spacing:1px;color:var(--muted)}
+.portal-scroll{font-family:inherit;letter-spacing:0}.portal-scroll span{margin-left:16px}
+.portal-story{position:relative;padding:80px 7%;background:var(--accent);color:var(--paper)}
+.portal-story .eyebrow{margin-bottom:26px}.portal-story h2{font-size:clamp(32px,5vw,76px);line-height:1.25;letter-spacing:-.055em}
+.portal-story-copy{font-size:clamp(16px,1.4vw,20px);line-height:1.9;margin:26px 0 30px}
+.portal-story .portal-enter{border-color:var(--paper);background:var(--paper);color:var(--accent)}
+.portal-story .portal-enter:focus-visible{outline-color:var(--paper)}
+.logo-portal[data-motion="on"]{height:calc(var(--portal-height) * 3.4)}
+[data-motion="on"] .portal-pin{position:sticky;top:0;min-height:0;height:var(--portal-height)}
+[data-motion="on"] .portal-art{inset:0;width:100%;height:100%}
+[data-motion="on"] .portal-story{position:absolute;inset:auto 0 0;height:var(--portal-height);z-index:3;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:transparent;opacity:var(--portal-reveal,0)}
+[data-motion="on"] .portal-front{z-index:2}
+[data-motion="on"] .portal-front[inert]{pointer-events:none}
+@media(max-width:700px){.portal-pin{min-height:560px}.portal-eyebrow{font-size:12px}.portal-support p{font-size:15px}.portal-bottom>span:first-child{display:none}.portal-bottom{font-size:10px}.portal-story{padding:64px 6%}.portal-story h2{font-size:clamp(30px,7.5vw,48px)}}
+@media(max-height:550px){.portal-eyebrow{display:none}.portal-support{top:65%}.portal-support p{display:none}.portal-bottom{bottom:4%}.portal-story{padding:24px 6%}.portal-story h2{font-size:32px}.portal-story-copy{margin:12px 0;font-size:14px}.portal-story .eyebrow{margin-bottom:12px}}
+@media(max-width:480px){.portal-bottom>span:last-child{display:none}}
+@media(prefers-reduced-motion:reduce){.portal-scroll,.portal-motion-toggle{display:none}.portal-enter{transition:none}.portal-atmosphere *{animation:none!important;will-change:auto}}
