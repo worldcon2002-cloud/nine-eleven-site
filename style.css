@@ -64,6 +64,7 @@ footer .logo-text{font-size:29px}
 .brand-logo-card .brand-caption{display:block;width:100%;padding:15px 8px;font-size:13px;font-weight:500;color:#acb0a4;letter-spacing:0;text-align:center}
 .brand-grid li.brand-logo-card:hover{background:#13160f}
 .brand-logo-card .logo-surface img{width:175px;height:64px}
+.logo-brand-blue-elephant img{filter:brightness(0)}
 .brand-more{margin:28px 0 0;text-align:right;font-size:20px;line-height:1.6;letter-spacing:-.5px;color:var(--ink)}
 .brand-more strong{color:var(--accent);font-weight:700}
 @media(max-width:700px){.logo-surface{height:100px;padding:22px 18px}.media-grid li.media-logo-card,.brand-grid li.brand-logo-card{min-height:147px}.media-logo-card .media-name,.brand-logo-card .brand-caption{font-size:12px}.logo-kakao img{width:580px}.brand-logo-card .logo-surface img{max-width:100%;height:58px}}
