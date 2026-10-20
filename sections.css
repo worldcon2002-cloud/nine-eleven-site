@@ -25,6 +25,10 @@
 .result-number .result-multiple{flex-basis:100%;font-size:20px;font-weight:750;letter-spacing:-.6px;line-height:1.4;margin:2px 0 8px;color:var(--ink)}
 .growth-cases{display:grid;gap:28px;margin-bottom:36px}
 .daily-growth-case{margin-bottom:36px}
+.growth-case[aria-labelledby="case-zero-title"] .case-breakdown{font-size:clamp(18px,1.5vw,22px);line-height:1.5}
+.growth-case[aria-labelledby="case-zero-title"] .case-breakdown>div{padding:16px 0}
+.growth-case[aria-labelledby="case-zero-title"] .case-breakdown>div:last-child{font-size:clamp(21px,1.7vw,26px);font-weight:800}
+@media(max-width:400px){.growth-case[aria-labelledby="case-zero-title"] .case-breakdown>div{flex-wrap:wrap;gap:4px 12px}}
 .daily-growth-case .case-number-zoom{left:5%;top:7%;width:min(70%,360px)}
 .growth-case{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:38px;padding:36px;border:1px solid var(--line);background:linear-gradient(135deg,#d2f54209,transparent 55%);align-items:center}
 .case-story h3{font-size:clamp(24px,2.3vw,34px);line-height:1.4;letter-spacing:-1.2px;margin:20px 0}
